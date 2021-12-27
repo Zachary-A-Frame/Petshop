@@ -8,10 +8,11 @@
     </head>
     <body>
         <h1>Adoption Agency</h1>
+        <a href="/add">Add a pet</a>
         <h2>Pets</h2>
         {%for pet in pets%}
         <span>
-            <img src="{{pet.photo_url}}" width="250px">
+            <img src="{{pet.image_url()}}" width="250px">
             <p>{{pet.name}} the {{pet.species}} is available!</p>
         </span>
         {% endfor %}
