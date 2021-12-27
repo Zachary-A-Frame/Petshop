@@ -22,11 +22,11 @@ toolbar = DebugToolbarExtension(app)
 @app.route("/")
 def home_display():
     """Build home page"""
+    pets = Pet.query.all()
+    return render_template("home.html", pets=pets)
 
-    return render_template("home.html")
 
-
-@app.route("/add")
+@app.route("/add", methods=["GET", "POST"])
 def add_pet():
     """Add a pet to DB"""
 
